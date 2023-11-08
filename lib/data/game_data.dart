@@ -1,7 +1,7 @@
 
 
+import 'package:flutter/services.dart';
 import 'package:project/data/game_models.dart';
-
 List<Game> games = [
   Game(
     id: 0,
@@ -87,3 +87,6 @@ List<Game> populerGame = [
     isFavorit: false,
   ),
 ];
+Future<String> readJsonData(String path) async {
+  return await rootBundle.loadString(path);
+}
