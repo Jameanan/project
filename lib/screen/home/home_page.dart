@@ -1,17 +1,15 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:project/core/color.dart';
+import 'package:project/data/category_model.dart';
 import 'package:project/data/game_data.dart';
 import 'package:project/screen/home/details_page.dart';
 
-import '../../core/color.dart';
-import '../../data/category_model.dart';
-
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
-
 }
 
 class _HomePageState extends State<HomePage> {
@@ -24,15 +22,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: white,
         automaticallyImplyLeading: false,
         leadingWidth: 40,
         leading: TextButton(
           onPressed: () {},
-          child: Image.asset('assets/images/menu.png'),
+          child: Image.asset(
+              'assets/images/menu.png'
+          ),
         ),
         actions: [
           Container(
@@ -95,15 +95,13 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
+                  SizedBox(width: 10,),
                   Container(
                     height: 45.0,
                     width: 45.0,
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     decoration: BoxDecoration(
-                      color: Colors.green,
+                      color: green,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.lightBlueAccent.withOpacity(0.9),
@@ -272,9 +270,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   AnimatedContainer slider(active, index) {
-    double margin = active ? 20 : 30;
+    double margin = active ? 10 : 20;
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 500),
+      duration: Duration(milliseconds: 500),
       curve: Curves.easeInOutCubic,
       margin: EdgeInsets.all(margin),
       child: mainPlantsCard(index),
@@ -342,7 +340,7 @@ class _HomePageState extends State<HomePage> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 5),
+                  padding: const EdgeInsets.only(bottom: 4),
                   child: Text(
                     '${games[index].name} - \$${games[index].price.toStringAsFixed(0)}',
                     style: TextStyle(
