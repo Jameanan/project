@@ -16,4 +16,15 @@ class Game {
     required this.price,
     required this.isFavorit,
   });
+  factory Game.fromJson(Map<String, dynamic> json){
+    return Game(
+      id: json['id'],
+      name: json['name'],
+      category: json['category'],
+      imagePath: json['imagePath'],
+      description: json['description'],
+      price: json['price'],
+      isFavorit: json['isFavorit']
+    );
+  }
 }

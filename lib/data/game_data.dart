@@ -87,6 +87,3 @@ List<Game> populerGame = [
     isFavorit: false,
   ),
 ];
-Future<String> readJsonData(String path) async {
-  return await rootBundle.loadString(path);
-}
